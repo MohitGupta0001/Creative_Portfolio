@@ -75,8 +75,8 @@ export const ScrollyCanvas: React.FC<ScrollyCanvasProps> = ({ frameCount }) => {
     const imgHeight = image.height;
 
     const scale = Math.max(canvasWidth / imgWidth, canvasHeight / imgHeight);
-    const x = canvasWidth / 2 - (imgWidth / 2) * scale;
-    const y = canvasHeight / 2 - (imgHeight / 2) * scale;
+    const x = (canvasWidth - imgWidth * scale) / 2;
+    const y = (canvasHeight - imgHeight * scale) * 0.1; // Top-weighted framing to show hair
 
     // Use black background or clear rect
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -90,18 +90,18 @@ export const ScrollyCanvas: React.FC<ScrollyCanvasProps> = ({ frameCount }) => {
       if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      
+
       // Trigger a re-draw on resize by subtly forcing an update, 
       // or just trust the next scroll event. We'll manually draw the current frame.
       if (isLoaded && images.length > 0) {
         const ctx = canvas.getContext("2d");
         const image = images[Math.floor(frameIndex.get())];
         if (ctx && image) {
-            const scale = Math.max(canvas.width / image.width, canvas.height / image.height);
-            const x = canvas.width / 2 - (image.width / 2) * scale;
-            const y = canvas.height / 2 - (image.height / 2) * scale;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(image, x, y, image.width * scale, image.height * scale);
+          const scale = Math.max(canvas.width / image.width, canvas.height / image.height);
+          const x = (canvas.width - image.width * scale) / 2;
+          const y = (canvas.height - image.height * scale) * 0.1; // Top-weighted framing
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(image, x, y, image.width * scale, image.height * scale);
         }
       }
     };
@@ -115,7 +115,7 @@ export const ScrollyCanvas: React.FC<ScrollyCanvasProps> = ({ frameCount }) => {
     <div ref={containerRef} className="relative w-full h-[500vh]">
       <div className="sticky top-0 w-full h-screen overflow-hidden">
         <canvas ref={canvasRef} className="w-full h-full block" />
-        
+
         {/* Optional loading state. To keep it awwwards-level, we can make it sleek */}
         {!isLoaded && (
           <div className="absolute inset-0 flex items-center justify-center bg-black z-50">

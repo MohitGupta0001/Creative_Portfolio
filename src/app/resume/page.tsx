@@ -74,7 +74,7 @@ export default function ResumePage() {
               <strong className="text-white font-semibold"> Whitehats Technology Pvt Ltd</strong>. Passionate about creating efficient, scalable, and 
               user focused web application, I am gaining hands-on experience in software development, web 
               technologies, and real-world projects. With a strong foundation in programming and a drive for 
-              continuous learning, I'm ready to tackle complex challenges and deliver innovative solutions.
+              continuous learning, I&apos;m ready to tackle complex challenges and deliver innovative solutions.
             </p>
           </div>
         </motion.section>
@@ -161,7 +161,7 @@ export default function ResumePage() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Coffee Machine Simulation</h3>
               <p className="text-neutral-400 leading-relaxed">
-                Created a console-based Coffee Machine simulation using Python's Object-Oriented Programming 
+                Created a console-based Coffee Machine simulation using Python&apos;s Object-Oriented Programming 
                 (OOP) concepts. Models drink selection, resource tracking, and payment handling.
               </p>
             </motion.div>
@@ -270,9 +270,9 @@ export default function ResumePage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[1px] bg-gradient-to-r from-transparent via-[#00d2ff] to-transparent opacity-50"></div>
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#00d2ff]/10 rounded-full blur-[80px] pointer-events-none"></div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Let&apos;s Work Together</h2>
           <p className="text-lg text-neutral-400 max-w-2xl mx-auto mb-12">
-            I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+            I&apos;m always open to discussing new projects, creative ideas or opportunities to be part of your visions.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-12">
